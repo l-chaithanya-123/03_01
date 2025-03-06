@@ -14,11 +14,17 @@ const items=[
   "tofu and vegetables",
   "guhuihioj"
 ];
+
+const dishObjects=items.map((dish,i) => ({
+  id:i,
+  title: dish
+}));
+
 function Main({dishes}){
   return(
     <ul>
-      {dishes.map((dish, i) => (
-        <li key={i} style={{listStyleType:"none"}}>{dish}</li>
+      {dishes.map((dish) => (
+        <li key={dish.id} style={{listStyleType:"none"}}>{dish}</li>
         ))}
     </ul>
   )
